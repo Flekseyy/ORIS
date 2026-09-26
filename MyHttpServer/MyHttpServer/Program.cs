@@ -37,7 +37,9 @@ public class Program
                     isRunning = false;
                     break;
                 default:
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Неизвестная команда.");
+                    Console.ResetColor(); 
                     break;
                 
             }

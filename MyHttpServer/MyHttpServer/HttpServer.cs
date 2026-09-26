@@ -10,29 +10,38 @@ public class HttpServer
     private bool _isRunning;
     public HttpServer(string url)
     {
+        if (url[^1] != '/') url += "/";
         _url = url;
         _listener = new HttpListener();
         _listener.Prefixes.Add(url);
+    }
+    private void Log(string message)
+    {
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] {message}");
+        Console.ResetColor(); 
     }
     public void Start()
     {
         if (_isRunning)
         {
-            Console.WriteLine("Сервер уже запущен");
+            Log("Сервер уже запущен.");
             return;
         }
         try
         {
             _listener.Start();
             _isRunning = true;
-            Console.WriteLine("Запрос обработан");
-            Console.WriteLine($"Можете подключитесь к серверу по адресу {_url}");
+            Log($"Сервер успешно запущен и слушает адрес: {_url}");
             _ = Task.Run(async () =>
             {
                 while (_isRunning)
                 {
                     var context = await _listener.GetContextAsync();
+                    var request = context.Request;
                     var response = context.Response;
+                    Log($"Получен запрос: {request.HttpMethod} {request.Url.LocalPath} от {request.RemoteEndPoint}");
+
 
                     var responseText = await File.ReadAllTextAsync("index.html");
 
@@ -43,17 +52,23 @@ public class HttpServer
 
                     await output.WriteAsync(buffer);
                     await output.FlushAsync();
+                    Log($"Ответ успешно отправлен. Статус: {response.StatusCode} OK");
+
                 }
             });
 
         }
         catch (HttpListenerException error)
         {
-            Console.WriteLine($"Ошибка запуска {error}");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Log($"Ошибка запуска {error}");
+            Console.ResetColor(); 
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Ошибка при отправки запроса {ex.Message}");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Log($"Ошибка при отправки запроса {ex.Message}");
+            Console.ResetColor(); 
         }
         
     }
@@ -62,16 +77,15 @@ public class HttpServer
     {
         if (!_isRunning)
         {
-            Console.WriteLine("Сервер не запущен.");
+            Log("Сервер не запущен.");
+            Log("Ресурсы сервера освобождены.");
             return;
         }
         _isRunning = false;
         if (_listener.IsListening)
         {
             _listener.Stop();
-            _listener.Close();
         }
-        Console.WriteLine("Ресурсы сервера освобождены.");
     }
 }
 
