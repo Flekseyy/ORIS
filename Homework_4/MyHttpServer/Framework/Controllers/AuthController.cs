@@ -9,12 +9,12 @@ public class AuthController
     [Get("login")]
     public IActionResult LoginGet()
     {
-        return new ViewResult("Login_Form/login.html");
+        return new ViewResult("rokstar/rokstar.html");
     }
     [Post("login")]
     public IActionResult LoginPost(string login, string password)
     {
         Console.WriteLine($"{login} - логин, {password} - пароль");
-        return new ViewResult("Login_Form/login.html"); 
+        return new ViewResult("rokstar/rokstar.html"); 
     }
 }
