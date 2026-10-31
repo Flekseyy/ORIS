@@ -17,4 +17,4 @@ public class AuthController
         Console.WriteLine($"{login} - логин, {password} - пароль");
         return new ViewResult("rokstar/rokstar.html"); 
     }
-}
+}   
