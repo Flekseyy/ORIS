@@ -1,9 +1,9 @@
 ## Домашние задания
  
 - HomeWork_1 — Верстка сайта: «Страница поиска»
-- HomeWork_2 — HttpListener. Практика 1 (HTTP-сервер на C#, «Страница поиска»)
-- HomeWork_3 — HttpListener. Практика 2 (Статические файлы, передача типов файлов)
-- HomeWork_4 — HttpListener. Практика 3–4 (Передача параметров из query в метод endpoint, обработка ошибок)
-- HomeWork_5 — HttpListener. Практика 3–4 (Отправка сообщения на почту)
-- HomeWork_6 — HttpListener. Практика 5 (Библиотека HtmlTemplater)
-- HomeWork_7 — HttpListener. Практика 6–7 (Библиотека ORM)
+- HomeWork_2 — HttpListener. (HTTP-сервер на C#, «Страница поиска») + Knowledge
+- HomeWork_3 — HttpListener. (Статические файлы, передача типов файлов)
+- HomeWork_4 — HttpListener. (Передача параметров из query в метод endpoint, обработка ошибок)
+- HomeWork_5 — HttpListener. (Отправка сообщения на почту)
+- HomeWork_6 — HttpListener. (Библиотека MiniHtmlTemplater)
+- HomeWork_7 — HttpListener. (Библиотека ORM)
