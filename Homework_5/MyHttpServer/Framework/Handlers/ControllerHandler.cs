@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Reflection;
+using MyHttpServer.Framework.Configuration;
 using MyHttpServer.Framework.Controllers;
 using MyHttpServer.Framework.Http;
 using MyHttpServer.Framework.Result;
@@ -21,10 +22,10 @@ public class ControllerHandler(string staticDir) : Handler
         {
             try
             {
-                ControllerBase controllerInstance = Activator.CreateInstance(routeInfo.ControllerType) as ControllerBase;
+                var controllerInstance = Activator.CreateInstance(routeInfo.ControllerType) as ControllerBase;
                 controllerInstance?.SetContext(context);
                 var arguments = _parameterBinder.Bind(request, routeInfo.Method);
-                object? result = routeInfo.Method.Invoke(controllerInstance, arguments);
+                var result = routeInfo.Method.Invoke(controllerInstance, arguments);
                 if (result is IHttpResponseTypeResult responseResult)
                 {
                     await responseResult.ExecuteAsync(context);
@@ -33,8 +34,13 @@ public class ControllerHandler(string staticDir) : Handler
                 {
                     await _resultExecutor.ExecuteAsync(context, str);
                 }
+                else if (result is ViewResult viewResult)
+                {
+                    await _resultExecutor.ExecuteAsync(context,viewResult);
+                }
                 else
                 {
+                    Console.WriteLine("Ошибка");
                     response.StatusCode = 500;
                     response.Close();
                 }

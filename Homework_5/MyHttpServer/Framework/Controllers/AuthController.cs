@@ -7,7 +7,7 @@ namespace MyHttpServer.Framework.Controllers;
 [Controller("auth")]
 public class AuthController : ControllerBase
 {
-    [Get("login")]
+    [Get("logins")]
     public IActionResult LoginGet()
     {
         return new ViewResult("rokstar/rokstar.html");
@@ -29,10 +29,4 @@ public class AuthController : ControllerBase
     {
         return Html("aaaaa");
     }
-
-    // [Post("send")]
-    // public IHttpResponseTypeResult SendPost()
-    // {
-    //     return new 
-    // }
 }
