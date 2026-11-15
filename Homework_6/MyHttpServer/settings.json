@@ -1,0 +1,9 @@
+﻿{
+  "Server":
+  {
+    "Host": "127.0.0.1",
+    "Port":"8888",
+    "Path": "/" ,
+    "ConnectionString" : "Host=localhost;Port=5432;Database=SemestrBd;Username=postgres;Password=18041804;Pooling=true;Min Pool Size=5;Max Pool Size=100;"
+  }
+}

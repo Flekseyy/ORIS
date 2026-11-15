@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль пользователя: $Name</title>
+</head>
+<body>
+
+<!-- 1. Обычный текст и переменные ($Name, $Address.City) -->
+<header>
+    <h1>Добро пожаловать, $Name!</h1>
+    <p>Ваш город: $Address.City, улица $Address.Street</p>
+</header>
+
+<hr>
+
+<!-- 2. Индексы и словари ($Items[0], $Map["key"]) -->
+<section>
+    <h2>Настройки и теги</h2>
+    <p>Ваш первый тег: $Tags[0]</p>
+    <p>Выбранная тема оформления: $Settings["theme"]</p>
+</section>
+
+<hr>
+
+<!-- 3. Экранирование доллара ($$) и доллар перед не-буквой (50$, текст$ ) -->
+<section>
+    <h2>Финансовая информация</h2>
+    <p>Баланс кошелька: 50$</p>
+    <p>Бонусные баллы: 100$$</p> <!-- Выведется как 100$ -->
+    <p>Конец строки с долларом$ </p> <!-- Выведется как есть, с пробелом -->
+</section>
+
+<hr>
+
+<!-- 4. Условия ($if, } else if, } else) -->
+<section>
+    <h2>Уровень доступа</h2>
+
+    $if (IsAdmin) {
+    <div style="color: red; font-weight: bold;">Вы являетесь Администратором системы.</div>
+    } else if (Role == "Moderator") {
+    <div style="color: orange; font-weight: bold;">Вы являетесь Модератором.</div>
+    } else {
+    <div style="color: blue;">Вы обычный пользователь.</div>
+    }
+</section>
+
+<hr>
+
+<footer>
+    <p>Сгенерировано шаблонизатором. Все права защищены 2026$</p> <!-- Выведется как 2026$ -->
+</footer>
+
+</body>
+</html>
