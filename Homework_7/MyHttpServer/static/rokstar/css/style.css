@@ -1,0 +1,454 @@
+﻿*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.main
+{
+    color: #4d4d4d;
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+    background-color: #000000;
+    font-size: 16px;
+}
+.main__container
+{
+    height: 100%;
+    min-height: 100%;
+}
+.app-page
+{
+    background-image: url(../images/bg-repeat.png);
+    background-repeat: repeat;
+    background-size: 256px;
+    content: " ";
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    will-change: transform;
+    z-index: -1;
+}
+.app-page__content
+{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 0 auto 3.875rem;
+    min-height: 100vh;
+    width: 100%;
+    grid-gap: 0;
+    grid-template-areas:
+    ".      .       .     "
+".      content .     "
+"footer footer  footer";
+}
+.app-page__content-main
+{
+    align-self: center;
+    grid-area: content;
+    justify-self: center;
+    position: relative;
+}
+.app-page__logo
+{
+    display: flex;
+    justify-content: center;
+    margin: 1.25rem auto;
+}
+.app-page__logo-link
+{
+    color: #fcaf17;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+}
+.app-page__logo-link svg
+{
+    border-style: none;
+}
+
+.app-page__login-form
+{
+    margin: 1.25rem auto;
+    width: 31.25rem;
+    animation-duration: .4s;
+    animation-name: Container__fadein__jqFmd;
+    animation-timing-function: ease-out;
+    background-color: #fff;
+    border-radius: .125rem;
+    box-shadow: 0 0 1.25rem 0 rgba(0,0,0,.3);
+    padding: 1.25rem;
+}
+.app-page__login-form h1
+{
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    margin-top: 0;
+}
+.app-page__login-form-input__form
+{
+    margin-top: 1.25rem;
+}
+.app-page__login-form-input-Email
+{
+    border: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+}
+.app-page__login-form-input-Password
+{
+    border: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+}
+.app-page__login-form-input__span
+{
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    width: 100%;
+}
+.app-page__login-form-input__span span
+{
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    width: 100%;
+}
+.app-page__login-form-input__span span input
+{
+    appearance: none;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    color: #666;
+    display: block;
+    float: left;
+    font-size: 1.125rem;
+    height: 3.125rem;
+    margin: 0;
+    padding: 0 1.25rem;
+    position: relative;
+    width: 100%;
+}
+.app-page__login-form-input__label-label-pw
+{
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
+    color: #4d4d4d;
+    display: block;
+    float: right;
+    font-size: 1rem;
+    left: 1.25rem;
+    line-height: 3.125rem;
+    overflow: hidden;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    text-align: left;
+    text-overflow: inherit;
+    transform-origin: 0 0;
+    transition-duration: .2s;
+    transition-property: transform,color;
+    transition-timing-function: cubic-bezier(.4,0,.6,1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    width: calc(100% - 2.5rem);
+}
+.app-page__login-form-input__label-label-pw span
+{
+    color: #4d4d4d;
+    font-size: 1rem;
+    line-height: 3.125rem;
+    pointer-events: none;
+    text-align: left;
+    white-space: nowrap;
+}
+.app-page__login-form-input__span input:not(:placeholder-shown) + .app-page__login-form-input__label-label{
+    transform: translate(.0625rem,-.3125rem) scale(.75);
+}
+.app-page__login-form-input__span input:not(:placeholder-shown) + .app-page__login-form-input__label-label-pw{
+    transform: translate(.0625rem,-.3125rem) scale(.75);
+}
+.app-page__login-form-input__span input
+{
+    appearance: none;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    color: #666;
+    display: block;
+    float: left;
+    font-size: 1.125rem;
+    height: 3.125rem;
+    margin: 0;
+    padding: 0 1.25rem;
+    position: relative;
+    width: 100%;
+}
+.app-page__login-form-input__span button
+{
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    height: 1rem;
+    padding: 0;
+    position: absolute;
+    right: 1.25rem;
+    top: 1.125rem;
+    width: 2rem;
+}
+.app-page__login-form-input__span button svg
+{
+    vertical-align: unset;
+    fill: #999;
+    height: 16px;
+    width: 16px;
+}
+.app-page__login-form-input__label-label
+{
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
+    color: #4d4d4d;
+    display: block;
+    float: right;
+    font-size: 1rem;
+    left: 1.25rem;
+    line-height: 3.125rem;
+    overflow: hidden;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    text-align: left;
+    text-overflow: inherit;
+    transform-origin: 0 0;
+    transition-duration: .2s;
+    transition-property: transform,color;
+    transition-timing-function: cubic-bezier(.4,0,.6,1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    width: calc(100% - 2.5rem);
+}
+.app-page__login-link
+{
+    margin: 1.25rem auto;
+    width: 31.25rem;
+    animation-duration: .4s;
+    animation-name: Container__fadein__jqFmd;
+    animation-timing-function: ease-out;
+    background-color: #fff;
+    border-radius: .125rem;
+    box-shadow: 0 0 1.25rem 0 rgba(0,0,0,.3);
+    padding: 1.25rem;
+}
+.app-page__login-field
+{
+    border: none;
+
+    padding: 0;
+}
+.app-page__login-field div
+{
+    align-items: center;
+    display: flex;
+}
+.app-page__login-field div p
+{
+    color: #4d4d4d;
+    font-size: 1.125rem;
+    font-weight: 500;
+    min-width: 50%;
+    text-align: left;
+}
+.app-page__login-field-icon
+{
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: flex-end;
+}
+.app-page__login-field-icon a
+{
+    margin-right: 10px;
+}
+.app-page__create p
+{
+    margin: 1.25rem auto;
+    max-width: 31.25rem;
+    width: 100%;
+    border-radius: .125rem;
+    color: #fff;
+    padding: .625rem 0;
+    text-align: center;
+}
+.app-page__create a
+{
+    text-decoration: underline;
+    color: #fcaf17;
+    cursor: pointer;
+    background-color: transparent;
+}
+.app-page__login-form-input-Password-keep
+{
+    align-items: center;
+    display: flex;
+    margin-top: 1.25rem;
+}
+.app-page__login-form-input-Password-keep span
+{
+    display: block;
+    line-height: 20px;
+}
+.app-page__login-form-input-Password-keep span input
+{
+    appearance: none;
+    border: 1px solid #000;
+    border-radius: 3px;
+    height: 1.25rem;
+    position: absolute;
+    width: 1.25rem;
+    padding: 0;
+    color: #000;
+    line-height: 20px;
+}
+.app-page__login-form-input-Password-keep span input:checked:focus
+{
+    border-color: #000;
+    border-width: 1px;
+    box-shadow: inset 0 0 0 1px #fcaf17;
+}
+.app-page__login-form-input-Password-keep span label::before
+{
+    background: #fff;
+    border: 1px solid;
+    border-radius: 3px;
+    height: 1.25rem;
+    left: 0;
+    top: 0;
+    width: 1.25rem;
+}
+.app-page__login-form-input-Password-keep span label::after
+{
+    content: "";
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    border-color: #333;
+    height: .375rem;
+    left: .25rem;
+    top: .375rem;
+    transform: rotate(-50deg);
+    width: .75rem;
+}
+.app-page__login-form-input-Password-keep span label
+{
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1.25rem;
+    min-height: 20px;
+    padding-left: 1.875rem;
+
+}
+.app-page__login-form-input-Forgot
+{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+.app-page__login-form-input-Forgot div
+{
+    display: flex;
+    justify-content: space-between;
+}
+.app-page__login-form-input-Forgot div  p
+{
+    align-self: center;
+    margin: 0;
+}
+.app-page__login-form-input-Forgot div p a
+{
+    color: #1a1a1a;
+    text-decoration: underline;
+    cursor: pointer;
+    background-color: transparent;
+}
+.app-page__login-form-input-Forgot div button
+{
+    min-width: 6.25rem;
+    padding: 0 1.25rem;
+    background: #fcaf17;
+    border-color: #fcaf17;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+    text-align: center;
+    text-decoration: none;
+}
+.main__footer
+{
+    grid-area: footer;
+    margin: 1.25rem 0;
+    text-align: center;
+}
+.main__footer__list
+{
+    height: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0 .625rem 0;
+    color: #999;
+    text-shadow: 0 .0625rem 0 rgba(0,0,0,.8);
+    text-transform: uppercase;
+}
+.main__footer__list-li
+{
+    color: #999;
+    display: inline-block;
+    font-size: .65rem;
+    line-height: .75rem;
+    text-shadow: 0 .0625rem 0 rgba(0,0,0,.8);
+    text-transform: uppercase;
+    border-left: 1px solid #999;
+    margin-left: .3125rem;
+    padding-left: .3125rem;
+    list-style: none;
+    text-align: center;
+
+}
+.main__footer__list-li-cop
+{
+    display: inline-block;
+    color: #999;
+    font-size: .75rem;
+    line-height: .75rem;
+    text-shadow: 0 .0625rem 0 rgba(0,0,0,.8);
+    text-transform: uppercase;
+}
+
+.main__footer__list-li button
+{
+    border-left-color: rgb(153, 153, 153);
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0;
+    text-transform: uppercase;
+    transition: color .2s ease-out;
+}
