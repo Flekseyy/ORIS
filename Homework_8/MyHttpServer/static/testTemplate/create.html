@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить пользователя</title>
+    <style>
+        body { font-family: sans-serif; max-width: 500px; margin: 50px auto; padding: 20px; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+        button { margin-top: 20px; padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer; font-size: 16px; }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+<h1>Добавить нового пользователя</h1>
+
+<form action="/user/create" method="post">
+    <label>Имя:</label>
+    <input type="text" name="name" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Возраст:</label>
+    <input type="number" name="age" min="1" max="150" required>
+
+    <button type="submit">Добавить</button>
+</form>
+
+<p><a href="/user/list">← Вернуться к списку</a></p>
+</body>
+</html>

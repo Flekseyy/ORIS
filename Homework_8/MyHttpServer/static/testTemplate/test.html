@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список пользователей</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+<h1>Пользователи базы данных</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>Имя</th>
+        <th>Email</th>
+        <th>Возраст</th>
+    </tr>
+    </thead>
+    <tbody>
+    $foreach (var user in Users) {
+    <tr>
+        <td>$user.id</td>
+        <td>$user.name</td>
+        <td>$user.email</td>
+        <td>$user.age</td>
+    </tr>
+    }
+    </tbody>
+</table>
+
+<p>Всего записей: $Users.Count</p>
+</body>
+</html>
