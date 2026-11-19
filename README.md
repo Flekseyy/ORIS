@@ -7,3 +7,4 @@
 - HomeWork_5 — HttpListener. (Отправка сообщения на почту)
 - HomeWork_6 — HttpListener. (Библиотека MiniHtmlTemplater)
 - HomeWork_7 — HttpListener. (Библиотека ORM)
+- HomeWork_8 — HttpListener. (Куки)
